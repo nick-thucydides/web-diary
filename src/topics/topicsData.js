@@ -1,3 +1,5 @@
+// topics/topicsData.js
+
 export const topicsData = [
   { id: 0, title: "Home", chapter: "Welcome", component: "Home" },
   { id: 1, title: "JS Hoisting", chapter: "JavaScript Fundamentals", component: "JSHoisting" },
@@ -31,10 +33,31 @@ export const topicsData = [
   { id: 29, title: "Monolithic Architecture", chapter: "Architecture Patterns", component: "Monolithic" },
   { id: 30, title: "Microservices Architecture", chapter: "Architecture Patterns", component: "Microservices" },
   { id: 31, title: "Model-View-Controller (MVC)", chapter: "Architecture Patterns", component: "MVC" },
-  { id: 32, title: "API-Centric Architectures", chapter: "Architecture Patterns", component: "APICentric" },
-  { id: 33, title: "Serverless / FaaS", chapter: "Architecture Patterns", component: "Serverless" },
-  { id: 34, title: "Content Delivery Network (CDN)", chapter: "Modern Web Infrastructure", component: "CDN" },
-  { id: 35, title: "Single Sign-On", chapter: "Modern Web Infrastructure", component: "SingleSignOn" },
-  { id: 36, title: "OAuth and Bearer Token", chapter: "Modern Web Infrastructure", component: "OAuth" },
-  { id: 37, title: "Hosting LLM Models", chapter: "Modern Web Infrastructure", component: "HostingLLM" }
+  { id: 32, title: "Model-View-ViewModel (MVVM)", chapter: "Architecture Patterns", component: "MVVM" },
+  { id: 33, title: "Layered (n-Tier) Architecture", chapter: "Architecture Patterns", component: "LayeredArch" },
+  { id: 34, title: "Event-Driven Architecture", chapter: "Architecture Patterns", component: "EventDriven" },
+  { id: 35, title: "Micro-Frontends", chapter: "Architecture Patterns", component: "MicroFrontends" },
+  { id: 36, title: "Hexagonal Architecture", chapter: "Architecture Patterns", component: "HexagonalArch" },
+  { id: 37, title: "CQRS Pattern", chapter: "Architecture Patterns", component: "CQRS" },
+  { id: 38, title: "API-Centric Architectures", chapter: "Architecture Patterns", component: "APICentric" },
+  { id: 39, title: "Serverless / FaaS", chapter: "Architecture Patterns", component: "Serverless" },
+  { id: 40, title: "Content Delivery Network (CDN)", chapter: "Modern Web Infrastructure", component: "CDN" },
+  { id: 41, title: "Single Sign-On", chapter: "Modern Web Infrastructure", component: "SingleSignOn" },
+  { id: 42, title: "OAuth and Bearer Token", chapter: "Modern Web Infrastructure", component: "OAuth" },
+  { id: 43, title: "Web Push Notifications", chapter: "Modern Web Infrastructure", component: "WebPushNotifications" },
+  { id: 44, title: "Local Storage", chapter: "Modern Web Infrastructure", component: "LocalStorage" },
+  { id: 45, title: "HTML5 Canvas", chapter: "Frontend Technologies", component: "HTML5Canvas" },
+  { id: 46, title: "Defer Attribute", chapter: "Frontend Technologies", component: "Defer" },
+  { id: 47, title: "Progressive Web Apps (PWAs)", chapter: "Frontend Technologies", component: "PWA" },
+  { id: 48, title: "Service Workers", chapter: "Frontend Technologies", component: "ServiceWorkers" },
+  { id: 49, title: "WebSockets & Real-Time Communication", chapter: "Advanced Web APIs", component: "WebSockets" },
+  { id: 50, title: "GraphQL vs REST", chapter: "Advanced Web APIs", component: "GraphQL" },
+  { id: 51, title: "CORS (Cross-Origin Resource Sharing)", chapter: "Advanced Web APIs", component: "CORS" },
+  { id: 52, title: "Rate Limiting & Throttling", chapter: "Advanced Web APIs", component: "RateLimiting" },
+  { id: 53, title: "Database Indexing & Optimization", chapter: "Database Performance", component: "DBIndexing" },
+  { id: 54, title: "Docker & Containerization", chapter: "DevOps & Deployment", component: "Docker" },
+  { id: 55, title: "CI/CD Pipelines", chapter: "DevOps & Deployment", component: "CICD" },
+  { id: 56, title: "WebAssembly (WASM)", chapter: "Advanced Technologies", component: "WebAssembly" },
+  { id: 57, title: "Hosting LLM Models", chapter: "AI & ML Integration", component: "HostingLLM" },
+  { id: 58, title: "Hosting Pretrained AI Models", chapter: "AI & ML Integration", component: "PretrainedAI" }
 ];
