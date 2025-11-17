@@ -1,9 +1,9 @@
 //App.jsx
 import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight, Home, Menu, BookOpen } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Home, Menu } from 'lucide-react';
 import { topicsData } from './topics/topicsData';
 
-// import HomeContent from './topics/content/HomeContent';
+import HomeContent from './topics/content/HomeContent';
 import JSHoisting from './topics/content/JSHoisting';
 import Closure from './topics/content/Closure';
 import ExecutionStack from './topics/content/ExecutionStack';
@@ -31,22 +31,8 @@ import RESTfulAPIs from './topics/content/RESTfulAPIs';
 import Fetch from './topics/content/Fetch';
 import Ajax from './topics/content/Ajax';
 import GetVsPost from './topics/content/GetVsPost';
-import ArchPatterns from './topics/content/ArchPatterns';
-import Monolithic from './topics/content/Monolithic';
-import Microservices from './topics/content/Microservices';
-import MVC from './topics/content/MVC';
-import APICentric from './topics/content/APICentric';
-import Serverless from './topics/content/Serverless';
-import CDN from './topics/content/CDN';
-import SingleSignOn from './topics/content/SingleSignOn';
-import OAuth from './topics/content/OAuth';
-import HostingLLM from './topics/content/HostingLLM';
 import WebSockets from './topics/content/Websockets';
 import WebAssembly from './topics/content/WebAssembly';
-
-
-
-
 
 // Placeholder content component
 const PlaceholderContent = ({ title }) => (
@@ -58,66 +44,6 @@ const PlaceholderContent = ({ title }) => (
     </div>
   </div>
 );
-
-// Home Content Component
-const HomeContent = ({ chapters, goToPage }) => {
-  return (
-    <div className="text-gray-700">
-      <div className="text-center mb-8">
-        <h2 className="text-4xl font-bold mb-4 text-gray-800">Welcome to My Web Development Diary</h2>
-        <p className="text-xl text-gray-600 mb-2">A comprehensive guide to building secure modern web applications</p>
-        <p className="text-gray-500">Click on any topic below to start learning</p>
-      </div>
-
-      <div className="bg-gradient-to-r from-purple-50 to-indigo-50 p-6 rounded-lg mb-8">
-        <h3 className="text-2xl font-bold mb-3 text-gray-800">📚 About This Diary</h3>
-        <p className="text-gray-700 mb-3">
-          This is my personal collection of web development knowledge, covering everything from JavaScript fundamentals
-          to advanced architectural patterns and security best practices.
-        </p>
-        <p className="text-gray-700">
-          <strong>Total Topics:</strong> {topicsData.length - 1} | <strong>Chapters:</strong> {Object.keys(chapters).length}
-        </p>
-        <div className="mt-3 flex flex-wrap gap-2">
-          <span className="px-3 py-1 bg-purple-200 text-purple-800 rounded-full text-sm font-semibold">JavaScript</span>
-          <span className="px-3 py-1 bg-indigo-200 text-indigo-800 rounded-full text-sm font-semibold">Security</span>
-          <span className="px-3 py-1 bg-blue-200 text-blue-800 rounded-full text-sm font-semibold">APIs</span>
-          <span className="px-3 py-1 bg-green-200 text-green-800 rounded-full text-sm font-semibold">Architecture</span>
-          <span className="px-3 py-1 bg-pink-200 text-pink-800 rounded-full text-sm font-semibold">DevOps</span>
-          <span className="px-3 py-1 bg-yellow-200 text-yellow-800 rounded-full text-sm font-semibold">AI/ML</span>
-        </div>
-      </div>
-
-      {Object.entries(chapters).map(([chapterName, chapterTopics]) => (
-        <div key={chapterName} className="mb-8">
-          <h3 className="text-2xl font-bold mb-4 text-gray-800 border-b-2 border-purple-300 pb-2">
-            {chapterName}
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            {chapterTopics.map(topic => (
-              <button
-                key={topic.id}
-                onClick={() => goToPage(topic.id)}
-                className="text-left p-4 bg-white hover:bg-purple-50 border border-gray-200 hover:border-purple-300 rounded-lg transition-all shadow-sm hover:shadow-md group"
-              >
-                <div className="flex items-start gap-3">
-                  <span className="text-purple-600 font-bold text-lg flex-shrink-0">{topic.id}.</span>
-                  <div>
-                    <div className="font-semibold text-gray-800 group-hover:text-purple-600 transition-colors">
-                      {topic.title}
-                    </div>
-                  </div>
-                </div>
-              </button>
-            ))}
-          </div>
-        </div>
-      ))}
-
-
-    </div>
-  );
-};
 
 const componentMap = {
   Home: HomeContent,
@@ -148,16 +74,6 @@ const componentMap = {
   Fetch,
   Ajax,
   GetVsPost,
-  ArchPatterns,
-  Monolithic,
-  Microservices,
-  MVC,
-  APICentric,
-  Serverless,
-  CDN,
-  SingleSignOn,
-  OAuth,
-  HostingLLM,
   WebSockets,
   WebAssembly,
 };
@@ -196,18 +112,9 @@ const App = () => {
     window.scrollTo(0, 0);
   };
 
-  // Group topics by chapter (excluding Home)
-  const chapters = topicsData.slice(1).reduce((acc, topic) => {
-    if (!acc[topic.chapter]) {
-      acc[topic.chapter] = [];
-    }
-    acc[topic.chapter].push(topic);
-    return acc;
-  }, {});
-
   const renderContent = () => {
     if (isHome) {
-      return <HomeContent chapters={chapters} goToPage={goToPage} />;
+      return <HomeContent goNext={goNext} />;
     }
 
     const ContentComponent = componentMap[currentTopic.component];
@@ -243,25 +150,23 @@ const App = () => {
             <span>Home</span>
           </button>
 
-          {Object.entries(chapters).map(([chapterName, chapterTopics]) => (
-            <div key={chapterName} className="mb-6">
-              <h3 className="text-purple-400 font-semibold mb-2 text-sm uppercase tracking-wide">
-                {chapterName}
-              </h3>
-              {chapterTopics.map(topic => (
-                <button
-                  key={topic.id}
-                  onClick={() => goToPage(topic.id)}
-                  className={`w-full text-left px-4 py-2 mb-1 rounded transition ${currentPage === topic.id
-                    ? 'bg-purple-600 text-white'
-                    : 'text-gray-300 hover:bg-slate-700'
-                    }`}
-                >
-                  {topic.id}. {topic.title}
-                </button>
-              ))}
-            </div>
-          ))}
+          <div className="mb-6">
+            <h3 className="text-purple-400 font-semibold mb-2 text-sm uppercase tracking-wide">
+              All Topics
+            </h3>
+            {topicsData.slice(1).map(topic => (
+              <button
+                key={topic.id}
+                onClick={() => goToPage(topic.id)}
+                className={`w-full text-left px-4 py-2 mb-1 rounded transition ${currentPage === topic.id
+                  ? 'bg-purple-600 text-white'
+                  : 'text-gray-300 hover:bg-slate-700'
+                  }`}
+              >
+                {topic.id}. {topic.title}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -298,9 +203,6 @@ const App = () => {
           <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
             {!isHome && (
               <div className="bg-gradient-to-r from-purple-600 to-indigo-600 px-8 py-6">
-                <div className="text-purple-200 text-sm font-semibold mb-2">
-                  {currentTopic.chapter}
-                </div>
                 <h2 className="text-4xl font-bold text-white">
                   {currentTopic.title}
                 </h2>
@@ -349,8 +251,6 @@ const App = () => {
         </div>
 
         <footer className="text-center mt-12 text-purple-300">
-          <p>© 2025 Web Diary | Full-Stack Web Development Guide</p>
-          <p className="text-sm mt-2">{topicsData.length - 1} Topics • {Object.keys(chapters).length} Chapters</p>
         </footer>
       </div>
     </div>

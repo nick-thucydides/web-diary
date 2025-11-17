@@ -4,21 +4,22 @@ const SSL = () => (
   <div>
     <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 mb-8">
       <p className="text-gray-700 font-semibold mb-2">
-        📝 Content Area - Add Your Material Here
+        Motivating example:
       </p>
       <p className="text-gray-600 text-sm">
-        Replace this template with your own content.
+        If I'm shopping online, how do I know I know someone won't intercept my credit card number when I try to buy something?
       </p>
     </div>
 
     <h3 className="text-2xl font-bold text-gray-800 mb-4">Overview</h3>
     <p className="text-gray-600 mb-6">
-      Add your introduction and overview here.
+      SSL stands for Secure Sockets Layer. It's a protocol that ensures no one can read or change our data, due to encryption, and also authenticates the website.
     </p>
 
     <h3 className="text-2xl font-bold text-gray-800 mb-4">Key Concepts</h3>
+    SSL is the predecessor to TLS (transport layer security) which is the more modern version, however apparently everyone still uses the terms interchangeably. How this works: browser connects to website, website sends certificate, browser checks it
     <p className="text-gray-600 mb-6">
-      Add key concepts, definitions, and explanations here.
+
     </p>
 
     <h3 className="text-2xl font-bold text-gray-800 mb-4">Code Examples</h3>
