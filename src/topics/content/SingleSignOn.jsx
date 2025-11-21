@@ -4,10 +4,10 @@ const SingleSignOn = () => (
   <div>
     <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 mb-8">
       <p className="text-gray-700 font-semibold mb-2">
-        📝 Content Area - Add Your Material Here
+        Motivating Example
       </p>
       <p className="text-gray-600 text-sm">
-        Replace this template with your own content.
+
       </p>
     </div>
 

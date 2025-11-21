@@ -17,16 +17,17 @@ const SSL = () => (
     </p>
 
     <h3 className="text-2xl font-bold text-gray-800 mb-4">Key Concepts</h3>
-    SSL is the predecessor to TLS (transport layer security) which is the more modern version, however apparently everyone still uses the terms interchangeably. How this works: browser connects to website, website sends certificate, browser checks it
-    <p className="text-gray-600 mb-6">
 
+    <p className="text-gray-600 mb-6">
+      SSL is the predecessor to TLS (transport layer security) which is the more modern version, however apparently everyone still uses the terms interchangeably. How this works: browser connects to website, website sends certificate, browser checks it.
+      As we taled about public private keys earlier, we use them to establish a secure conenction. The bank example from earlier was foreshadowing this.
     </p>
 
-    <h3 className="text-2xl font-bold text-gray-800 mb-4">Code Examples</h3>
+    {/* <h3 className="text-2xl font-bold text-gray-800 mb-4">Code Examples</h3>
     <div className="bg-gray-900 text-gray-100 p-6 rounded-lg mb-6 font-mono text-sm overflow-x-auto">
       <pre>{`// Add your code examples here
 console.log('Example code');`}</pre>
-    </div>
+    </div> */}
 
     <h3 className="text-2xl font-bold text-gray-800 mb-4">Interview Tips</h3>
     <div className="bg-blue-50 border-l-4 border-blue-400 p-6 mb-6">
